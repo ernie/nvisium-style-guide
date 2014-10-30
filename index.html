@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>	
+		<link rel="stylesheet" href="stylesheets/screen.css">
+		<script src="assets/jquery/jquery-2.1.1.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<title>Front-end Style Guide 1.0</title>
+	</head>
+
+	<body>
+		<div class="container">
+		
+			<h1>nVisium Front-end Style Guide 1.0</h1>
+
+			<!-- Color palette -->
+			<section class="section color">
+				<h3 class="section-title">Color Palette</h2>
+				
+				<table class="table table-bordered">
+					<tr>
+						<th>Color</th>
+						<th>Hex Value</th>
+						<th>Variable Name in SCSS</th>
+						<th>Usage Description</th>
+					</tr>
+
+					<tr class="main-action">
+						<td></td>
+						<td>#F37025</td>
+						<td><code>$main-action</code></td>
+						<td>Main color for call to action, as in buttons, links, etc.</td>
+					</tr>
+					
+					<tr class="alt-action">
+						<td></td>
+						<td>#3299BB</td>
+						<td><code>$alt-action</code></td>
+						<td>Alternative main color. Use this in places where the main color won't work.</td>
+					</tr>
+
+					<tr class="text-dark">
+						<td></td>
+						<td>#424242</td>
+						<td><code>$text-dark</code></td>
+						<td>Standard color for texts on lighter backgrounds.</td>
+					</tr>
+					
+					<tr class="accent-gray">
+						<td></td>
+						<td>#BCBCBC</td>
+						<td><code>$accent-gray</code></td>
+						<td>Stock color for decoration purposes.</td>
+					</tr>
+
+					<tr class="accent-gray-2">
+						<td></td>
+						<td>#E9E9E9</td>
+						<td><code>$accent-gray-2</code></td>
+						<td>Darker stock color for decoration purposes.</td>
+					</tr>
+
+					<tr class="warning-red">
+						<td></td>
+						<td>#FF6666</td>
+						<td><code>$warning-red</code></td>
+						<td>Used for warning texts, etc.</td>
+					</tr>
+				</table>
+
+			</section>
+			<!-- Color palette end -->
+			
+			<!-- Typography -->
+			<section class="section typography">
+				<h3 class="section-title">Typography &amp; Words</h2>
+				
+				<p>We use Lato for our typeface. It can be found on <a href="https://www.google.com/fonts/#UsePlace:use/Collection:Lato">Google Fonts</a> or <a href="http://www.latofonts.com/">downloaded as font files.</a></p>
+				
+				<h4>General rules:</h4>
+				<ol>
+					<li>Base <code>font-size</code> is <code>16px</code>, which is defined on the <code>body</code> level.</li>
+					<li>Consecutively, <code>em</code> is used for setting sizes throughout the document instead of <code>px</code>.</li> 
+					<li>If needed, increase sizes by multiples of <code>4px</code>, which is <code>0.25em</code> per increment.</li>
+					<li>By default, the <code>line-height</code> is <code>1.5em</code>, though it can vary depending on different circumstances.</li>
+					<li>Unless customizing for certain use case, you don't really need to worry about doing the calculation as you can just use the preset.</li>
+					<li>HTML represents meaning. CSS represents appearance. Basically, stick with HTML unless you are styling for purely appearance purpose.
+						<ol>
+							<li>Use <code>&lt;em&gt;</code> tag if you want to <em>express something in a different tone</em>.</li>
+							<li>Use <code>&lt;strong&gt;</code> tag if you want to <strong>emphasize or call out something</strong>.</li>
+						</ol>
+					</li>
+					<li>Font weights are light, regular, and bold, which equals to <code>300</code>, <code>400</code>, and <code>700</code> respectively.
+						<ol>
+							<li>Body text is standard by default.</li>
+							<li><code>&lt;strong&gt;</code> tags are bold by default.</li>
+							<li>No element is light by default. Use it for decoration purpose.</li>
+						</ol>
+					</li>
+				</ol>
+				
+				<h4>Font weights and styles:</h4>
+				<p>Normal text. Light, regular, and bold.</p>
+				<blockquote>
+					<p>The quick brown fox jumps over the lazy dog.</p>
+					<p>The quick brown fox jumps over the lazy dog.</p>
+					<p>The quick brown fox jumps over the lazy dog.</p>
+				</blockquote>
+				<p>Italic (emphasized) text. Light, regular, and bold.</p>
+				<blockquote>
+					<p><em>The quick brown fox jumps over the lazy dog.</em></p>
+					<p><em>The quick brown fox jumps over the lazy dog.</em></p>
+					<p><em>The quick brown fox jumps over the lazy dog.</em></p>
+				</blockquote>
+
+				<p>Remember: Typography usage is flexible if it needs be, as long as it doesn't stray far from the guidelines above.</p>
+			</section>
+			<!-- Typography end -->
+
+			<!-- Components -->
+			<section class="section components">
+				<h3 class="section-title">Components &amp; States</h3>
+				<h4>General rules:</h4>
+				<ol>
+					<li>All components don't have rounded corners.</li>
+					<li>All transition duration is <code>0.2s</code> unless otherwise specified for better easing.</li>
+				</ol>
+
+				<h4>Buttons:</h4>
+				<ol>
+					<li>State changes of buttons are achieved by changing <code>background-color</code> to <code>lighten($color,10%)</code> on hover and <code>darken($color,5%)</code> on active.</li>
+					<li>Normally, the dimension of the button is defined by <code>padding: 0.75em 1.25em</code>. Otherwise, just use the <code>0.75em</code> vertical padding for varying width.</li>
+					<li>There are color specific <code>outline</code> for the two buttons, overwriting the default user-agent styling and to maintain accessibility.</li>
+					<li>Buttons have no borders.</li>
+				</ol>
+				<ul class="buttons">
+					<li><button class="btn">Normal</button></li>
+					<li><button class="btn">Hover</button></li>
+					<li><button class="btn">Active</button></li>
+					<li><button class="btn">Main Action Example</button></li>
+					<li><button class="btn">Normal</button></li>
+					<li><button class="btn">Hover</button></li>
+					<li><button class="btn">Active</button></li>
+					<li><button class="btn">Alt Action Example</button></li>
+				</ul>
+
+				<h4>Form items:</h4>
+				<ol>
+					<li>State changes are achieved by changing <code>border-color</code> to <code>lighten($alt-action,10%)</code> on hover and <code>$warning-red</code> on warning/error.</li>
+					<li>Use <code>padding-left: 0.25em</code> inside the form field so the cursor isn't sticking right on the left edge.</li>
+				</ol>
+				<ul class="forms">
+					<li><input placeholder="Normal"></li>
+					<li><input placeholder="Focus"></li>
+					<li><input placeholder="Warning or Error"></li>
+					<li><input placeholder="Form field example"></li>
+				</ul>
+
+				<h4>Links:</h4>
+				<ol>
+					<li>State changes are similar to buttons: Change <code>color</code> to <code>lighten($color,10%)</code> on hover and <code>darken($color,5%)</code> on active.</li>
+					<li>Keep the <code>text-decoration: underline</code>, which comes with Bootstrap 3.0 by default.</li>
+					<li>For links in text, maintain the regular <code>font-weight</code>, but use <code>font-weight: 700</code> for navigation links.</li>
+					<li>Normally, use the two main colors for links, but you can use other colors if the situation requires.</li>
+				</ol>
+				<ul class="links">
+					<li><a href="">Normal</a></li>
+					<li><a href="">Hover</a></li>
+					<li><a href="">Active</a></li>
+					<li><a href="">Link Example</a></li>
+					<li><a href="">Nav Link Example</a></li>
+				</ul>
+			</section>
+			<!-- Components end -->
+			
+		</div>
+	</body>
+
+</html>
