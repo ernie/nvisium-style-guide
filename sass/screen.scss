@@ -1,0 +1,284 @@
+/* Welcome to Compass.
+ * In this file you should write your primary styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/css3";
+
+// * + * {
+// 	margin-top: 1em !important;
+// }
+
+// Color set variables
+$primary-action: #F37025;
+$primary-action-hover: lighten($primary-action, 10%); // #F4803D
+$primary-action-active: darken($primary-action, 5%); // #F1600D
+
+$alt-action: #3299BB;
+$alt-action-hover: lighten($alt-action, 10%); // #50B0D0
+$alt-action-active: darken($alt-action, 5%); // #2D89A7
+
+$text-dark: #424242;
+$accent-gray: #BCBCBC;
+$accent-gray-2: #E9E9E9;
+$success-green: #38da4a;
+$warning-red: #FF6666;
+
+// Mixin for quickly styling buttons
+@mixin primary-button {
+	background-color: $primary-action;
+	@include transition(0.2s);
+	&:hover, &:active, &:visited, &:focus {
+		color: white;
+	}
+	&:hover {
+		background-color: $primary-action-hover;
+	}
+	&:active {
+		background-color: $primary-action-active;
+	}
+	&:focus {
+		outline-color: rgba(243,112,37,0.7);
+	}
+}
+
+@mixin alt-button {
+	background-color: $alt-action;
+	@include transition(0.2s);
+	&:hover, &:active, &:visited, &:focus {
+		color: white;
+	}
+	&:hover {
+		background-color: $alt-action-hover;
+	}
+	&:active {
+		background-color: $alt-action-active;
+	}
+	&:focus {
+		outline-color: rgba(45,137,167,0.7);
+	}
+}
+
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	color: $text-dark;
+	line-height: 1.5;
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: bold;
+	}
+	.container {
+		margin-bottom: 4em;
+	}
+}
+
+// Overriding Bootstrap styles
+button.btn {
+	@include border-radius(0);
+	border: none !important;
+
+}
+
+// Styling for sections
+.section {
+	margin-top: 2em;
+	border-top: 1px dashed #ddd;
+	h4 {
+		margin-top: 1.5em;
+	}
+}
+
+// Color palette styling
+
+// Setting large area for color cells
+tr > td:first-child {
+	height: 3em;
+	width: 6em;
+}
+
+// td:first-child targets the first column of cells for coloring
+tr.primary-action {
+	td:first-child {
+		background-color: $primary-action;
+	}
+}
+
+tr.alt-action {
+	td:first-child {
+		background-color: $alt-action;
+	}
+}
+
+tr.text-dark {
+	td:first-child {
+		background-color: $text-dark;
+	}
+}
+
+tr.accent-gray {
+	td:first-child {
+		background-color: $accent-gray;
+	}
+}
+
+tr.accent-gray-2 {
+	td:first-child {
+		background-color: $accent-gray-2;
+	}
+}
+
+tr.success-green {
+	td:first-child {
+		background-color: $success-green;
+	}
+}
+
+tr.warning-red {
+	td:first-child {
+		background-color: $warning-red;
+	}
+}
+// Color palette styling end
+
+// Typography and words styling
+.typography {
+	blockquote {
+		p:first-child {
+			font-weight: 300;
+		}
+		p:nth-child(2) {
+			font-weight: 400;
+		}
+		p:last-child {
+			font-weight: 700;
+		}
+	}
+}
+// Typography and words styling end
+
+// Components & states styling
+.components {
+	// Styling for buttons
+	ul.buttons {
+		list-style: none;
+		padding: 0;
+		li {
+			display: inline-block;
+			button, button:hover, button:active, button:focus, button:visited {
+				color: white;
+				padding: 0.75em 1.25em;
+			}
+			// Displaying different button states
+			&:first-child button {
+				background-color: $primary-action;
+			}
+			&:nth-child(2) button {
+				background-color: $primary-action-hover;
+			}
+			&:nth-child(3) button {
+				background-color: $primary-action-active;
+			}
+			&:nth-child(4) button {
+				@include primary-button;
+				margin-right: 1em;
+			}
+			&:nth-child(5) button {
+				background-color: $alt-action;
+			}
+			&:nth-child(6) button {
+				background-color: $alt-action-hover;
+			}
+			&:nth-child(7) button {
+				background-color: $alt-action-active;
+			}
+			&:nth-child(8) button {
+				@include alt-button;
+			}
+		}
+	}
+	// Styling for forms
+	ul.forms {
+		list-style: none;
+		padding: 0;
+		li {
+			display: inline-block;
+			input {
+				padding-left: 0.25em;
+				width: 10em;
+			}
+			&:first-child input {
+				outline: none;
+				border: 2px solid $accent-gray;
+				@include box-sizing(border-box);
+				@include transition(0.2s);
+			}
+			&:nth-child(2) input {
+				outline: none;
+				border: 2px solid lighten($alt-action,10%);
+				@include box-sizing(border-box);
+				@include transition(0.2s);
+			}
+			&:nth-child(3) input {
+				outline: none;
+				border: 2px solid $warning-red;
+				@include box-sizing(border-box);
+				@include transition(0.2s);
+			}
+			&:last-child input {
+				outline: none;
+				border: 2px solid $accent-gray;
+				@include box-sizing(border-box);
+				@include transition(0.2s);
+					&:focus {
+						border-color: lighten($alt-action,10%);
+					}
+			}
+		}
+	}
+
+	ul.links {
+		list-style: none;
+		padding: 0;
+		li {
+			display: inline-block;
+			a {
+				color: $primary-action;
+				margin-right: 1em;
+				font-weight: 400;
+				@include transition(0.2s);
+			}
+			&:first-child a {
+				text-decoration: none;
+			}
+			&:nth-child(2) a {
+				text-decoration: underline;
+				color: lighten($primary-action,10%);
+			}
+			&:nth-child(3) a {
+				text-decoration: underline;
+				color: darken($primary-action,5%);
+			}
+			&:nth-child(4) a {
+				&:hover {
+					color: lighten($primary-action,10%);
+				}
+				&:active {
+					color: darken($primary-action,5%);
+				}
+			}
+			&:nth-child(5) a {
+				&:hover {
+					color: lighten($primary-action,10%);
+				}
+				&:active {
+					color: darken($primary-action,5%);
+				}
+			}
+		}
+	}
+}
+
+
+//

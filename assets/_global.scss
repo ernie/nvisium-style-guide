@@ -1,0 +1,19 @@
+// nVisium front-end global styling v1.0
+// Date: 2014-12-09
+
+// To use it, make a copy to your project directory.
+
+// Color set variables
+$primary-action: #F37025;
+$primary-action-hover: #F4803D; // lighten($primary-action, 10%)
+$primary-action-active: darken($primary-action, 5%); // #F1600D darken($primary-action, 5%)
+
+$alt-action: #3299BB;
+$alt-action-hover: lighten($alt-action, 10%); // #50B0D0
+$alt-action-active: darken($alt-action, 5%); // #2D89A7
+
+$text-dark: #424242;
+$accent-gray: #BCBCBC;
+$accent-gray-2: #E9E9E9;
+$success-green: #38da4a;
+$warning-red: #FF6666;

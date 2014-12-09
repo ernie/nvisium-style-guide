@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>	
 		<link rel="stylesheet" href="stylesheets/screen.css">
-		<script src="assets/jquery/jquery-2.1.1.min.js"></script>
-		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/bower_components/jquery/jquery.min.js"></script>
+		<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<title>Front-end Style Guide 1.0</title>
 	</head>
 
@@ -27,18 +27,18 @@
 						<th>Usage Description</th>
 					</tr>
 
-					<tr class="main-action">
+					<tr class="primary-action">
 						<td></td>
 						<td>#F37025</td>
-						<td><code>$main-action</code></td>
-						<td>Main color for call to action, as in buttons, links, etc.</td>
+						<td><code>$primary-action</code></td>
+						<td>Primary color for call to action, as in buttons, links, etc.</td>
 					</tr>
 					
 					<tr class="alt-action">
 						<td></td>
 						<td>#3299BB</td>
 						<td><code>$alt-action</code></td>
-						<td>Alternative main color. Use this in places where the main color won't work.</td>
+						<td>Alternative (secondary) color. Use this in places where the primary color won't work.</td>
 					</tr>
 
 					<tr class="text-dark">
@@ -62,12 +62,20 @@
 						<td>Darker stock color for decoration purposes.</td>
 					</tr>
 
+					<tr class="success-green">
+						<td></td>
+						<td>#38da4a</td>
+						<td><code>$success-green</code></td>
+						<td>Used when an action is successful, etc.</td>
+					</tr>
+
 					<tr class="warning-red">
 						<td></td>
 						<td>#FF6666</td>
 						<td><code>$warning-red</code></td>
 						<td>Used for warning texts, etc.</td>
 					</tr>
+
 				</table>
 
 			</section>
@@ -84,21 +92,21 @@
 					<li>Base <code>font-size</code> is <code>16px</code>, which is defined on the <code>body</code> level.</li>
 					<li>Consecutively, <code>em</code> is used for setting sizes throughout the document instead of <code>px</code>.</li> 
 					<li>If needed, increase sizes by multiples of <code>4px</code>, which is <code>0.25em</code> per increment.</li>
-					<li>By default, the <code>line-height</code> is <code>1.5em</code>, though it can vary depending on different circumstances.</li>
+					<li>By default, the <code>line-height</code> is <code>1.5</code> (unitless), though it can vary depending on different circumstances.</li>
 					<li>Unless customizing for certain use case, you don't really need to worry about doing the calculation as you can just use the preset.</li>
-					<li>HTML represents meaning. CSS represents appearance. Basically, stick with HTML unless you are styling for purely appearance purpose.
+					<li>HTML represents meaning. CSS represents appearance. Basically, stick with HTML unless you are styling for purely appearance purpose.</li>
 						<ol>
 							<li>Use <code>&lt;em&gt;</code> tag if you want to <em>express something in a different tone</em>.</li>
-							<li>Use <code>&lt;strong&gt;</code> tag if you want to <strong>emphasize or call out something</strong>.</li>
+							<li>Use <code>&lt;strong&gt;</code> tag if you want to <strong>emphasize or call out something</strong> (though sparingly).</li>
 						</ol>
-					</li>
-					<li>Font weights are light, regular, and bold, which equals to <code>300</code>, <code>400</code>, and <code>700</code> respectively.
+					
+					<li>Font weights are light, regular, and bold, which equals to <code>300</code>, <code>400</code>, and <code>700</code> respectively.</li>
 						<ol>
-							<li>Body text is standard by default.</li>
-							<li><code>&lt;strong&gt;</code> tags are bold by default.</li>
-							<li>No element is light by default. Use it for decoration purpose.</li>
+							<li>Heading tags are <code>bold</code> by default.</li>
+							<li>Body text is <code>light</code> by default.</li>
+							<li><code>&lt;strong&gt;</code> tags are <code>bold</code> by default.</li>
 						</ol>
-					</li>
+					
 				</ol>
 				
 				<h4>Font weights and styles:</h4>
@@ -132,18 +140,18 @@
 				<ol>
 					<li>State changes of buttons are achieved by changing <code>background-color</code> to <code>lighten($color,10%)</code> on hover and <code>darken($color,5%)</code> on active.</li>
 					<li>Normally, the dimension of the button is defined by <code>padding: 0.75em 1.25em</code>. Otherwise, just use the <code>0.75em</code> vertical padding for varying width.</li>
-					<li>There are color specific <code>outline</code> for the two buttons, overwriting the default user-agent styling and to maintain accessibility.</li>
+					<li>There are color specific <code>outline</code> for the two buttons, overwriting the default user-agent styling and to primarytain accessibility.</li>
 					<li>Buttons have no borders.</li>
 				</ol>
 				<ul class="buttons">
 					<li><button class="btn">Normal</button></li>
 					<li><button class="btn">Hover</button></li>
 					<li><button class="btn">Active</button></li>
-					<li><button class="btn">Main Action Example</button></li>
+					<li><button class="btn">Primary Action Example</button></li>
 					<li><button class="btn">Normal</button></li>
 					<li><button class="btn">Hover</button></li>
 					<li><button class="btn">Active</button></li>
-					<li><button class="btn">Alt Action Example</button></li>
+					<li><button class="btn">Alternative Action Example</button></li>
 				</ul>
 
 				<h4>Form items:</h4>
@@ -162,8 +170,8 @@
 				<ol>
 					<li>State changes are similar to buttons: Change <code>color</code> to <code>lighten($color,10%)</code> on hover and <code>darken($color,5%)</code> on active.</li>
 					<li>Keep the <code>text-decoration: underline</code>, which comes with Bootstrap 3.0 by default.</li>
-					<li>For links in text, maintain the regular <code>font-weight</code>, but use <code>font-weight: 700</code> for navigation links.</li>
-					<li>Normally, use the two main colors for links, but you can use other colors if the situation requires.</li>
+					<li>For links in text, use the default <code>font-weight</code>.
+					<li>Normally, use the two primary colors for links, but you can use other colors if the situation requires.</li>
 				</ol>
 				<ul class="links">
 					<li><a href="">Normal</a></li>
